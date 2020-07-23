@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.644)),
+    url("https://i.pinimg.com/originals/c8/dd/4e/c8dd4e1b9fa3c40d15bc9c24fc801084.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flip-card .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flip-card .inner .front,
+.flip-card .inner .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   display: flex;
+
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 10px;
+}
+.flip-card .inner .front {
+  background-color: #bbb;
+}
+.flip-card .inner .back {
+  background-color: rgb(251, 253, 253);
+
+  transform: rotateY(180deg);
+}
+.flip-card:hover .inner {
+  transform: rotateY(180deg);
+}
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 290px;
+  perspective: 1000px;
+  margin-left: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.back {
+  padding: 10px;
+  text-align: left;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.back,
+b {
+  color: rgb(1, 15, 2);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+h4,
+h5 {
+  text-align: center;
+  text-decoration: underline;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
